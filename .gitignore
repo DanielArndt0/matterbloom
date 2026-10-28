@@ -1,0 +1,14 @@
+build/
+build-*/
+.vs/
+.idea/
+.vscode/
+*.obj
+*.o
+*.pdb
+*.ilk
+*.exe
+*.agw
+*.mbw
+preferences.ini
+imgui.ini

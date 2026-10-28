@@ -1,0 +1,699 @@
+[
+  {
+    "reagent1": "Water",
+    "reagent2": "Lava",
+    "product1": "Steam",
+    "product2": "Obsidian",
+    "probability": 1.00,
+    "heatDelta": -0.08
+  },
+  {
+    "reagent1": "Water",
+    "reagent2": "Fire",
+    "product1": "Steam",
+    "product2": "Smoke",
+    "probability": 1.00,
+    "heatDelta": -0.12
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Water",
+    "product1": "Empty",
+    "product2": "Saltwater",
+    "probability": 0.10
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Alkali",
+    "product1": "Saltwater",
+    "product2": "Saltwater",
+    "probability": 1.00,
+    "heatDelta": 0.20
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Wood",
+    "product1": "Fire",
+    "product2": "Fire",
+    "probability": 0.08,
+    "minTemperature": 0.19,
+    "maxHumidity": 0.74,
+    "heatDelta": 0.10
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Charcoal",
+    "product1": "Fire",
+    "product2": "Fire",
+    "probability": 0.01
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Fabric",
+    "product1": "Fire",
+    "product2": "Fire",
+    "probability": 0.30
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Rubber",
+    "product1": "Fire",
+    "product2": "ToxicGas",
+    "probability": 0.05
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Fuel",
+    "product1": "Fire",
+    "product2": "Fire",
+    "probability": 0.95
+  },
+  {
+    "reagent1": "Lava",
+    "reagent2": "Wood",
+    "product1": "Lava",
+    "product2": "Fire",
+    "probability": 0.50
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Metal",
+    "product1": "Hydrogen",
+    "product2": "Rust",
+    "probability": 0.018,
+    "heatDelta": 0.025
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Stone",
+    "product1": "Empty",
+    "product2": "Gravel",
+    "probability": 0.02
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Brick",
+    "product1": "Empty",
+    "product2": "Silt",
+    "probability": 0.02
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Glass",
+    "product1": "Acid",
+    "product2": "Glass",
+    "probability": 0.00
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Web",
+    "product1": "Acid",
+    "product2": "Empty",
+    "probability": 0.20
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Plant",
+    "product1": "Fire",
+    "product2": "Fire",
+    "probability": 0.45,
+    "maxHumidity": 0.75
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Moss",
+    "product1": "Fire",
+    "product2": "Fire",
+    "probability": 0.25,
+    "maxHumidity": 0.40
+  },
+  {
+    "reagent1": "Water",
+    "reagent2": "Ice",
+    "product1": "Ice",
+    "product2": "Ice",
+    "probability": 0.002,
+    "maxTemperature": -0.4
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Plant",
+    "product1": "Empty",
+    "product2": "Compost",
+    "probability": 0.15
+  },
+  {
+    "reagent1": "Salt",
+    "reagent2": "Water",
+    "product1": "Empty",
+    "product2": "Saltwater",
+    "probability": 0.2
+  },
+  {
+    "reagent1": "Salt",
+    "reagent2": "Ice",
+    "product1": "Saltwater",
+    "product2": "Water",
+    "probability": 0.03
+  },
+  {
+    "reagent1": "Saltwater",
+    "reagent2": "Lava",
+    "product1": "Steam",
+    "product2": "Obsidian",
+    "probability": 0.9,
+    "heatDelta": -0.08
+  },
+  {
+    "reagent1": "Saltwater",
+    "reagent2": "Fire",
+    "product1": "Steam",
+    "product2": "Smoke",
+    "probability": 0.9
+  },
+  {
+    "reagent1": "Water",
+    "reagent2": "Metal",
+    "product1": "Water",
+    "product2": "Rust",
+    "probability": 0.0007,
+    "minHumidity": 0.10
+  },
+  {
+    "reagent1": "Saltwater",
+    "reagent2": "Metal",
+    "product1": "Saltwater",
+    "product2": "Rust",
+    "probability": 0.004,
+    "minHumidity": 0.08
+  },
+  {
+    "reagent1": "Water",
+    "reagent2": "Ash",
+    "product1": "Empty",
+    "product2": "Mud",
+    "probability": 0.025
+  },
+  {
+    "reagent1": "Water",
+    "reagent2": "Compost",
+    "product1": "Empty",
+    "product2": "Mud",
+    "probability": 0.018
+  },
+  {
+    "reagent1": "Water",
+    "reagent2": "Silt",
+    "product1": "Empty",
+    "product2": "Mud",
+    "probability": 0.028
+  },
+  {
+    "reagent1": "Water",
+    "reagent2": "Steam",
+    "product1": "Water",
+    "product2": "Water",
+    "probability": 0.018,
+    "maxTemperature": 0.25
+  },
+  {
+    "reagent1": "Steam",
+    "reagent2": "Ice",
+    "product1": "Water",
+    "product2": "Water",
+    "probability": 0.5
+  },
+  {
+    "reagent1": "Steam",
+    "reagent2": "Glass",
+    "product1": "Water",
+    "product2": "Glass",
+    "probability": 0.03,
+    "maxTemperature": 0.2
+  },
+  {
+    "reagent1": "Steam",
+    "reagent2": "Metal",
+    "product1": "Water",
+    "product2": "Metal",
+    "probability": 0.025,
+    "maxTemperature": 0.2
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Ice",
+    "product1": "Steam",
+    "product2": "Water",
+    "probability": 0.85
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Mud",
+    "product1": "Smoke",
+    "product2": "Clay",
+    "probability": 0.055,
+    "minTemperature": 0.35
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Clay",
+    "product1": "Fire",
+    "product2": "Brick",
+    "probability": 0.08,
+    "minTemperature": 0.35
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Oil",
+    "product1": "Fire",
+    "product2": "CarbonDioxide",
+    "probability": 0.55,
+    "heatDelta": 0.08
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Resin",
+    "product1": "Fire",
+    "product2": "Smoke",
+    "probability": 0.36
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Seed",
+    "product1": "Fire",
+    "product2": "Ash",
+    "probability": 0.32
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Web",
+    "product1": "Fire",
+    "product2": "Smoke",
+    "probability": 0.72
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "SporeCloud",
+    "product1": "Fire",
+    "product2": "Smoke",
+    "probability": 0.45
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "ToxicGas",
+    "product1": "Fire",
+    "product2": "Smoke",
+    "probability": 0.12
+  },
+  {
+    "reagent1": "Lava",
+    "reagent2": "Ice",
+    "product1": "Obsidian",
+    "product2": "Steam",
+    "probability": 0.95
+  },
+  {
+    "reagent1": "Lava",
+    "reagent2": "Sand",
+    "product1": "Lava",
+    "product2": "MoltenGlass",
+    "probability": 0.095,
+    "minTemperature": 0.35
+  },
+  {
+    "reagent1": "Lava",
+    "reagent2": "Clay",
+    "product1": "Lava",
+    "product2": "Brick",
+    "probability": 0.075
+  },
+  {
+    "reagent1": "Lava",
+    "reagent2": "Gravel",
+    "product1": "Lava",
+    "product2": "Stone",
+    "probability": 0.03
+  },
+  {
+    "reagent1": "Lava",
+    "reagent2": "Oil",
+    "product1": "Lava",
+    "product2": "Fire",
+    "probability": 0.83
+  },
+  {
+    "reagent1": "Lava",
+    "reagent2": "Fuel",
+    "product1": "Lava",
+    "product2": "Fire",
+    "probability": 0.95
+  },
+  {
+    "reagent1": "Lava",
+    "reagent2": "Resin",
+    "product1": "Lava",
+    "product2": "Fire",
+    "probability": 0.7
+  },
+  {
+    "reagent1": "Lava",
+    "reagent2": "Plant",
+    "product1": "Lava",
+    "product2": "Fire",
+    "probability": 0.8
+  },
+  {
+    "reagent1": "Lava",
+    "reagent2": "Moss",
+    "product1": "Lava",
+    "product2": "Fire",
+    "probability": 0.75
+  },
+  {
+    "reagent1": "Lava",
+    "reagent2": "Fabric",
+    "product1": "Lava",
+    "product2": "Fire",
+    "probability": 0.7
+  },
+  {
+    "reagent1": "Lava",
+    "reagent2": "Web",
+    "product1": "Lava",
+    "product2": "Fire",
+    "probability": 0.85
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Wood",
+    "product1": "Acid",
+    "product2": "Compost",
+    "probability": 0.032
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Seed",
+    "product1": "Acid",
+    "product2": "Compost",
+    "probability": 0.16
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Moss",
+    "product1": "Acid",
+    "product2": "Compost",
+    "probability": 0.11
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Fabric",
+    "product1": "Acid",
+    "product2": "Empty",
+    "probability": 0.12
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Rubber",
+    "product1": "Acid",
+    "product2": "Empty",
+    "probability": 0.018
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Soil",
+    "product1": "Acid",
+    "product2": "Silt",
+    "probability": 0.012
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Compost",
+    "product1": "Acid",
+    "product2": "Empty",
+    "probability": 0.055
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Ash",
+    "product1": "Saltwater",
+    "product2": "Silt",
+    "probability": 0.045
+  },
+  {
+    "reagent1": "ToxicGas",
+    "reagent2": "Plant",
+    "product1": "ToxicGas",
+    "product2": "Compost",
+    "probability": 0.035
+  },
+  {
+    "reagent1": "ToxicGas",
+    "reagent2": "Moss",
+    "product1": "ToxicGas",
+    "product2": "Compost",
+    "probability": 0.055
+  },
+  {
+    "reagent1": "ToxicGas",
+    "reagent2": "Seed",
+    "product1": "ToxicGas",
+    "product2": "Compost",
+    "probability": 0.04
+  },
+  {
+    "reagent1": "SporeCloud",
+    "reagent2": "Soil",
+    "product1": "Empty",
+    "product2": "Moss",
+    "probability": 0.001
+  },
+  {
+    "reagent1": "SporeCloud",
+    "reagent2": "Wood",
+    "product1": "Empty",
+    "product2": "Moss",
+    "probability": 0.005
+  },
+  {
+    "reagent1": "SporeCloud",
+    "reagent2": "Compost",
+    "product1": "Empty",
+    "product2": "Moss",
+    "probability": 0.009
+  },
+  {
+    "reagent1": "SporeCloud",
+    "reagent2": "Plant",
+    "product1": "Empty",
+    "product2": "Moss",
+    "probability": 0.003
+  },
+  {
+    "reagent1": "Saltwater",
+    "reagent2": "Seed",
+    "product1": "Saltwater",
+    "product2": "Compost",
+    "probability": 0.016
+  },
+  {
+    "reagent1": "Saltwater",
+    "reagent2": "Moss",
+    "product1": "Saltwater",
+    "product2": "Compost",
+    "probability": 0.004
+  },
+  {
+    "reagent1": "Ash",
+    "reagent2": "Soil",
+    "product1": "Empty",
+    "product2": "Compost",
+    "probability": 0.003
+  },
+  {
+    "reagent1": "Lava",
+    "reagent2": "Metal",
+    "product1": "Lava",
+    "product2": "MoltenMetal",
+    "probability": 0.13,
+    "minTemperature": 0.30
+  },
+  {
+    "reagent1": "Lava",
+    "reagent2": "Glass",
+    "product1": "Lava",
+    "product2": "MoltenGlass",
+    "probability": 0.12,
+    "minTemperature": 0.30
+  },
+  {
+    "reagent1": "Lava",
+    "reagent2": "Brick",
+    "product1": "Lava",
+    "product2": "Stone",
+    "probability": 0.012,
+    "minTemperature": 0.60
+  },
+  {
+    "reagent1": "Water",
+    "reagent2": "MoltenMetal",
+    "product1": "Steam",
+    "product2": "Metal",
+    "probability": 0.28,
+    "heatDelta": -0.15
+  },
+  {
+    "reagent1": "Water",
+    "reagent2": "MoltenGlass",
+    "product1": "Steam",
+    "product2": "Glass",
+    "probability": 0.20,
+    "heatDelta": -0.15
+  },
+  {
+    "reagent1": "Saltwater",
+    "reagent2": "MoltenMetal",
+    "product1": "Steam",
+    "product2": "Metal",
+    "probability": 0.31,
+    "heatDelta": -0.15
+  },
+  {
+    "reagent1": "MoltenMetal",
+    "reagent2": "Sand",
+    "product1": "MoltenMetal",
+    "product2": "Glass",
+    "probability": 0.027,
+    "minTemperature": 0.60
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Hydrogen",
+    "product1": "Fire",
+    "product2": "Fire",
+    "probability": 0.95,
+    "heatDelta": 0.18
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "CarbonDioxide",
+    "product1": "Smoke",
+    "product2": "CarbonDioxide",
+    "probability": 0.34,
+    "heatDelta": -0.12
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "MoltenGlass",
+    "product1": "Fire",
+    "product2": "MoltenGlass",
+    "probability": 0.0
+  },
+  {
+    "reagent1": "Water",
+    "reagent2": "Basalt",
+    "product1": "Water",
+    "product2": "Basalt",
+    "probability": 0.0
+  },
+  {
+    "reagent1": "Water",
+    "reagent2": "Obsidian",
+    "product1": "Water",
+    "product2": "Obsidian",
+    "probability": 0.0
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Basalt",
+    "product1": "Acid",
+    "product2": "Gravel",
+    "probability": 0.007
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Obsidian",
+    "product1": "Acid",
+    "product2": "Obsidian",
+    "probability": 0.0
+  },
+  {
+    "reagent1": "CarbonDioxide",
+    "reagent2": "Plant",
+    "product1": "CarbonDioxide",
+    "product2": "Plant",
+    "probability": 0.0
+  },
+  {
+    "reagent1": "Acid",
+    "reagent2": "Limestone",
+    "product1": "CarbonDioxide",
+    "product2": "Saltwater",
+    "probability": 0.21,
+    "heatDelta": 0.025
+  },
+  {
+    "reagent1": "IronOre",
+    "reagent2": "Coal",
+    "product1": "Metal",
+    "product2": "CarbonDioxide",
+    "probability": 0.038,
+    "minTemperature": 0.65,
+    "heatDelta": -0.045
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Peat",
+    "product1": "Fire",
+    "product2": "Ash",
+    "probability": 0.075,
+    "minTemperature": 0.25,
+    "maxHumidity": 0.54
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Coal",
+    "product1": "Fire",
+    "product2": "Smoke",
+    "probability": 0.08,
+    "heatDelta": 0.04
+  },
+  {
+    "reagent1": "Shale",
+    "reagent2": "Acid",
+    "product1": "FracturedRock",
+    "product2": "Acid",
+    "probability": 0.025
+  },
+  {
+    "reagent1": "Limestone",
+    "reagent2": "Water",
+    "product1": "Silt",
+    "product2": "Water",
+    "probability": 0.00025
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "PineNeedles",
+    "product1": "Fire",
+    "product2": "Fire",
+    "probability": 0.25,
+    "minTemperature": 0.20,
+    "maxHumidity": 0.72
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Shrub",
+    "product1": "Fire",
+    "product2": "Fire",
+    "probability": 0.16,
+    "minTemperature": 0.22,
+    "maxHumidity": 0.68
+  },
+  {
+    "reagent1": "Fire",
+    "reagent2": "Mycelium",
+    "product1": "Fire",
+    "product2": "Ash",
+    "probability": 0.05
+  }
+]

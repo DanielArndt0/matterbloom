@@ -1,0 +1,1155 @@
+[
+    {
+        "id": 1,
+        "name": "Sand",
+        "state": "Granular",
+        "porosity": 0.42,
+        "permeability": 0.82,
+        "cohesion": 0.12,
+        "color": [
+            219,
+            195,
+            114
+        ],
+        "colorVariance": 10,
+        "density": 1.5,
+        "friction": 0.8,
+        "thermalConductivity": 0.21,
+        "heatCapacity": 0.85,
+        "description": "Grãos minerais que podem fundir e formar vidro sob calor intenso.",
+        "transitions": [
+            {
+                "minTemperature": 0.82,
+                "product": "MoltenGlass",
+                "probability": 0.025
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Water",
+        "state": "Liquid",
+        "color": [
+            58,
+            143,
+            203
+        ],
+        "colorVariance": 5,
+        "density": 1.0,
+        "dispersionRate": 5.0,
+        "viscosity": 0.08,
+        "surfaceTension": 0.24,
+        "turbulence": 0.27,
+        "compressibility": 0.015,
+        "pressureResponse": 1.3,
+        "thermalConductivity": 0.36,
+        "heatCapacity": 3.8,
+        "description": "Líquido de alta capacidade térmica. Pode congelar ou evaporar.",
+        "transitions": [
+            {
+                "minTemperature": 0.57,
+                "product": "Steam",
+                "probability": 0.018,
+                "heatDelta": -0.12
+            },
+            {
+                "maxTemperature": -0.46,
+                "product": "Ice",
+                "probability": 0.12,
+                "heatDelta": 0.04
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Wall",
+        "state": "Solid",
+        "thermalConductivity": 0.32,
+        "color": [
+            100,
+            100,
+            100
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Wood",
+        "state": "Solid",
+        "color": [
+            133,
+            94,
+            66
+        ],
+        "flammability": true,
+        "thermalConductivity": 0.11,
+        "heatCapacity": 1.6,
+        "ignitionTemperature": 0.55,
+        "ignitionProbability": 0.08,
+        "description": "Combustível sólido: aquece, inflama e deixa carvão ao queimar."
+    },
+    {
+        "id": 5,
+        "name": "Fire",
+        "state": "Plasma",
+        "color": [
+            255,
+            100,
+            0
+        ],
+        "colorVariance": 50,
+        "lifetime": 40,
+        "initialTemperature": 1.0,
+        "thermalConductivity": 0.70,
+        "heatCapacity": 0.3,
+        "description": "Chama de vida curta que aquece e pode iniciar incêndios."
+    },
+    {
+        "id": 6,
+        "name": "Smoke",
+        "state": "Gas",
+        "color": [
+            150,
+            150,
+            150
+        ],
+        "colorVariance": 20,
+        "density": -0.5,
+        "lifetime": 100,
+        "dispersionRate": 2.0
+    },
+    {
+        "id": 7,
+        "name": "Oil",
+        "state": "Liquid",
+        "color": [
+            50,
+            50,
+            40
+        ],
+        "density": 0.8,
+        "dispersionRate": 3.0,
+        "viscosity": 0.64,
+        "surfaceTension": 0.55,
+        "turbulence": 0.09,
+        "pressureResponse": 0.82,
+        "flammability": true,
+        "heatCapacity": 1.4,
+        "thermalConductivity": 0.16,
+        "ignitionTemperature": 0.48,
+        "ignitionProbability": 0.08,
+        "description": "Líquido menos denso que a água e inflamável quando aquecido."
+    },
+    {
+        "id": 8,
+        "name": "Acid",
+        "state": "Liquid",
+        "color": [
+            130,
+            255,
+            50
+        ],
+        "density": 1.1,
+        "dispersionRate": 2.0,
+        "viscosity": 0.27,
+        "surfaceTension": 0.19,
+        "turbulence": 0.18,
+        "isAcid": true,
+        "lifetime": 300,
+        "description": "Solução corrosiva que pode reagir com metais e álcalis."
+    },
+    {
+        "id": 9,
+        "name": "Stone",
+        "state": "Solid",
+        "porosity": 0.015,
+        "permeability": 0.015,
+        "pressureResistance": 0.95,
+        "color": [
+            123,
+            139,
+            149
+        ],
+        "colorVariance": 9,
+        "density": 2.5,
+        "thermalConductivity": 0.40,
+        "heatCapacity": 1.9
+    },
+    {
+        "id": 10,
+        "name": "Life",
+        "state": "Special",
+        "color": [
+            255,
+            255,
+            255
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Soil",
+        "state": "Granular",
+        "porosity": 0.70,
+        "permeability": 0.38,
+        "cohesion": 0.42,
+        "color": [
+            90,
+            60,
+            40
+        ],
+        "colorVariance": 5,
+        "density": 1.4,
+        "friction": 0.9
+    },
+    {
+        "id": 12,
+        "name": "Gravel",
+        "state": "Granular",
+        "porosity": 0.29,
+        "permeability": 0.94,
+        "cohesion": 0.08,
+        "color": [
+            120,
+            120,
+            120
+        ],
+        "colorVariance": 15,
+        "density": 2.0,
+        "friction": 0.95
+    },
+    {
+        "id": 13,
+        "name": "Silt",
+        "state": "Granular",
+        "porosity": 0.58,
+        "permeability": 0.18,
+        "cohesion": 0.30,
+        "color": [
+            160,
+            150,
+            120
+        ],
+        "density": 1.1,
+        "friction": 0.4
+    },
+    {
+        "id": 14,
+        "name": "Salt",
+        "state": "Granular",
+        "color": [
+            240,
+            240,
+            240
+        ],
+        "density": 1.3
+    },
+    {
+        "id": 15,
+        "name": "Ash",
+        "state": "Granular",
+        "color": [
+            90,
+            90,
+            90
+        ],
+        "colorVariance": 10,
+        "density": 0.5,
+        "friction": 0.2
+    },
+    {
+        "id": 16,
+        "name": "Charcoal",
+        "state": "Granular",
+        "color": [
+            30,
+            30,
+            30
+        ],
+        "density": 1.2,
+        "flammability": true,
+        "ignitionTemperature": 0.63,
+        "ignitionProbability": 0.035
+    },
+    {
+        "id": 17,
+        "name": "Seed",
+        "state": "Granular",
+        "color": [
+            140,
+            180,
+            50
+        ],
+        "density": 1.0
+    },
+    {
+        "id": 18,
+        "name": "Plant",
+        "state": "Solid",
+        "color": [
+            61,
+            177,
+            83
+        ],
+        "colorVariance": 12,
+        "density": 0.4,
+        "flammability": true,
+        "ignitionTemperature": 0.39,
+        "ignitionProbability": 0.14
+    },
+    {
+        "id": 19,
+        "name": "Compost",
+        "state": "Granular",
+        "porosity": 0.85,
+        "permeability": 0.47,
+        "color": [
+            72,
+            51,
+            35
+        ],
+        "colorVariance": 8,
+        "density": 1.2,
+        "friction": 0.8
+    },
+    {
+        "id": 20,
+        "name": "Clay",
+        "state": "Solid",
+        "porosity": 0.38,
+        "permeability": 0.055,
+        "cohesion": 0.93,
+        "color": [
+            190,
+            120,
+            90
+        ],
+        "density": 2.0
+    },
+    {
+        "id": 21,
+        "name": "Brick",
+        "state": "Solid",
+        "color": [
+            180,
+            50,
+            40
+        ],
+        "colorVariance": 5,
+        "density": 2.5
+    },
+    {
+        "id": 22,
+        "name": "Glass",
+        "state": "Solid",
+        "color": [
+            200,
+            230,
+            255
+        ],
+        "density": 2.2,
+        "thermalConductivity": 0.20,
+        "heatCapacity": 1.25,
+        "transitions": [
+            {
+                "minTemperature": 0.91,
+                "product": "MoltenGlass",
+                "probability": 0.012
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Metal",
+        "state": "Solid",
+        "color": [
+            160,
+            170,
+            180
+        ],
+        "density": 5.0,
+        "thermalConductivity": 0.95,
+        "heatCapacity": 1.4,
+        "description": "Bom condutor térmico que pode fundir e sofrer corrosão.",
+        "transitions": [
+            {
+                "minTemperature": 0.87,
+                "product": "MoltenMetal",
+                "probability": 0.07
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Rust",
+        "state": "Solid",
+        "color": [
+            160,
+            70,
+            30
+        ],
+        "colorVariance": 10,
+        "density": 4.5
+    },
+    {
+        "id": 25,
+        "name": "Rubber",
+        "state": "Solid",
+        "color": [
+            40,
+            40,
+            40
+        ],
+        "density": 1.2,
+        "flammability": true
+    },
+    {
+        "id": 26,
+        "name": "Fabric",
+        "state": "Solid",
+        "color": [
+            220,
+            210,
+            200
+        ],
+        "density": 0.3,
+        "flammability": true
+    },
+    {
+        "id": 27,
+        "name": "Web",
+        "state": "Solid",
+        "color": [
+            240,
+            250,
+            255
+        ],
+        "density": 0.1,
+        "flammability": true
+    },
+    {
+        "id": 28,
+        "name": "Moss",
+        "state": "Solid",
+        "color": [
+            45,
+            125,
+            57
+        ],
+        "colorVariance": 9,
+        "density": 0.3,
+        "flammability": true
+    },
+    {
+        "id": 29,
+        "name": "Ice",
+        "state": "Solid",
+        "color": [
+            167,
+            215,
+            244
+        ],
+        "colorVariance": 6,
+        "density": 0.92,
+        "initialTemperature": -0.70,
+        "thermalConductivity": 0.39,
+        "heatCapacity": 1.9,
+        "description": "Água sólida. Absorve calor até derreter.",
+        "transitions": [
+            {
+                "minTemperature": -0.15,
+                "product": "Water",
+                "probability": 0.16,
+                "heatDelta": -0.06
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Mud",
+        "state": "Liquid",
+        "color": [
+            70,
+            50,
+            30
+        ],
+        "density": 1.6,
+        "dispersionRate": 1.0,
+        "viscosity": 0.91,
+        "surfaceTension": 0.82,
+        "turbulence": 0.025,
+        "pressureResponse": 0.48,
+        "heatCapacity": 2.0,
+        "transitions": [
+            {
+                "minTemperature": 0.44,
+                "product": "Clay",
+                "probability": 0.012
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Saltwater",
+        "state": "Liquid",
+        "color": [
+            40,
+            120,
+            220
+        ],
+        "density": 1.1,
+        "dispersionRate": 6.0,
+        "viscosity": 0.10,
+        "surfaceTension": 0.22,
+        "turbulence": 0.26,
+        "pressureResponse": 1.24,
+        "heatCapacity": 3.6,
+        "thermalConductivity": 0.34,
+        "transitions": [
+            {
+                "minTemperature": 0.67,
+                "product": "Steam",
+                "probability": 0.012
+            },
+            {
+                "maxTemperature": -0.67,
+                "product": "Ice",
+                "probability": 0.055
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "name": "Fuel",
+        "state": "Liquid",
+        "color": [
+            100,
+            40,
+            20
+        ],
+        "density": 0.7,
+        "dispersionRate": 8.0,
+        "viscosity": 0.19,
+        "surfaceTension": 0.16,
+        "turbulence": 0.23,
+        "flammability": true,
+        "ignitionTemperature": 0.36,
+        "ignitionProbability": 0.17
+    },
+    {
+        "id": 33,
+        "name": "Resin",
+        "state": "Liquid",
+        "color": [
+            220,
+            180,
+            50
+        ],
+        "density": 1.2,
+        "dispersionRate": 0.0,
+        "viscosity": 0.98,
+        "surfaceTension": 0.91,
+        "turbulence": 0.008,
+        "flammability": true,
+        "ignitionTemperature": 0.55,
+        "ignitionProbability": 0.045
+    },
+    {
+        "id": 34,
+        "name": "Alkali",
+        "state": "Liquid",
+        "color": [
+            200,
+            200,
+            255
+        ],
+        "density": 1.0,
+        "dispersionRate": 4.0,
+        "viscosity": 0.15,
+        "surfaceTension": 0.21,
+        "turbulence": 0.16
+    },
+    {
+        "id": 35,
+        "name": "Lava",
+        "state": "Liquid",
+        "color": [
+            255,
+            60,
+            0
+        ],
+        "colorVariance": 20,
+        "density": 3.0,
+        "dispersionRate": 1.0,
+        "viscosity": 0.89,
+        "surfaceTension": 0.80,
+        "turbulence": 0.04,
+        "pressureResponse": 0.58,
+        "thermalConductivity": 0.72,
+        "heatCapacity": 2.2,
+        "initialTemperature": 1.0,
+        "description": "Rocha fundida. Transfere calor e solidifica ao resfriar.",
+        "transitions": [
+            {
+                "maxTemperature": 0.47,
+                "product": "Basalt",
+                "probability": 0.035
+            }
+        ]
+    },
+    {
+        "id": 40,
+        "name": "Steam",
+        "state": "Gas",
+        "color": [
+            220,
+            230,
+            240
+        ],
+        "colorVariance": 5,
+        "density": -0.8,
+        "dispersionRate": 4.0,
+        "lifetime": 200,
+        "initialTemperature": 0.72,
+        "heatCapacity": 0.7,
+        "transitions": [
+            {
+                "maxTemperature": 0.21,
+                "product": "Water",
+                "probability": 0.055,
+                "heatDelta": 0.06
+            }
+        ]
+    },
+    {
+        "id": 41,
+        "name": "ToxicGas",
+        "state": "Gas",
+        "color": [
+            150,
+            200,
+            50
+        ],
+        "colorVariance": 10,
+        "density": -0.4,
+        "dispersionRate": 2.0,
+        "lifetime": 400
+    },
+    {
+        "id": 42,
+        "name": "SporeCloud",
+        "state": "Gas",
+        "color": [
+            120,
+            80,
+            150
+        ],
+        "colorVariance": 10,
+        "density": -0.2,
+        "dispersionRate": 1.0,
+        "lifetime": 300
+    },
+    {
+        "id": 43,
+        "name": "Basalt",
+        "state": "Solid",
+        "color": [
+            77,
+            78,
+            86
+        ],
+        "colorVariance": 10,
+        "density": 3.0,
+        "thermalConductivity": 0.46,
+        "heatCapacity": 1.8,
+        "description": "Rocha vulcânica produzida por resfriamento relativamente lento."
+    },
+    {
+        "id": 44,
+        "name": "Obsidian",
+        "state": "Solid",
+        "color": [
+            45,
+            44,
+            61
+        ],
+        "colorVariance": 7,
+        "density": 2.4,
+        "thermalConductivity": 0.22,
+        "description": "Vidro vulcânico produzido por resfriamento brusco."
+    },
+    {
+        "id": 45,
+        "name": "MoltenMetal",
+        "state": "Liquid",
+        "color": [
+            248,
+            178,
+            75
+        ],
+        "colorVariance": 14,
+        "density": 5.1,
+        "dispersionRate": 1.0,
+        "viscosity": 0.86,
+        "surfaceTension": 0.76,
+        "turbulence": 0.03,
+        "thermalConductivity": 0.90,
+        "heatCapacity": 1.5,
+        "initialTemperature": 0.95,
+        "transitions": [
+            {
+                "maxTemperature": 0.63,
+                "product": "Metal",
+                "probability": 0.13
+            }
+        ],
+        "description": "Metal fundido que solidifica quando perde calor."
+    },
+    {
+        "id": 46,
+        "name": "Hydrogen",
+        "state": "Gas",
+        "color": [
+            188,
+            225,
+            239
+        ],
+        "density": -0.95,
+        "dispersionRate": 6.0,
+        "lifetime": 700,
+        "flammability": true,
+        "ignitionTemperature": 0.28,
+        "ignitionProbability": 0.35,
+        "description": "Gás leve e inflamável de algumas reações com metais."
+    },
+    {
+        "id": 47,
+        "name": "CarbonDioxide",
+        "state": "Gas",
+        "color": [
+            160,
+            167,
+            175
+        ],
+        "density": -0.15,
+        "dispersionRate": 2.0,
+        "lifetime": 500,
+        "description": "Gás que não sustenta a combustão neste modelo simplificado."
+    },
+    {
+        "id": 48,
+        "name": "MoltenGlass",
+        "state": "Liquid",
+        "color": [
+            255,
+            206,
+            134
+        ],
+        "colorVariance": 10,
+        "density": 2.2,
+        "dispersionRate": 1.0,
+        "viscosity": 0.96,
+        "surfaceTension": 0.84,
+        "turbulence": 0.02,
+        "initialTemperature": 0.91,
+        "heatCapacity": 1.6,
+        "transitions": [
+            {
+                "maxTemperature": 0.57,
+                "product": "Glass",
+                "probability": 0.15
+            }
+        ],
+        "description": "Vidro fundido que solidifica durante o resfriamento."
+    },
+    {
+        "id": 49,
+        "name": "Algae",
+        "state": "Solid",
+        "color": [
+            48,
+            158,
+            122
+        ],
+        "colorVariance": 14,
+        "density": 0.32,
+        "thermalConductivity": 0.13,
+        "flammability": true,
+        "ignitionTemperature": 0.62,
+        "ignitionProbability": 0.04,
+        "description": "Alga que se propaga na agua quando ha umidade, nutrientes e temperatura adequada."
+    },
+    {
+        "id": 50,
+        "name": "Grass",
+        "state": "Solid",
+        "color": [
+            105,
+            197,
+            78
+        ],
+        "colorVariance": 17,
+        "density": 0.25,
+        "thermalConductivity": 0.09,
+        "flammability": true,
+        "ignitionTemperature": 0.51,
+        "ignitionProbability": 0.07,
+        "description": "Vegetacao baixa que se espalha sobre terrenos umidos e ferteis."
+    },
+    {
+        "id": 51,
+        "name": "Flower",
+        "state": "Solid",
+        "color": [
+            231,
+            116,
+            169
+        ],
+        "colorVariance": 12,
+        "density": 0.23,
+        "thermalConductivity": 0.08,
+        "flammability": true,
+        "ignitionTemperature": 0.49,
+        "ignitionProbability": 0.05,
+        "description": "Flor que pode produzir sementes e depende de agua e solo saudavel."
+    },
+    {
+        "id": 52,
+        "name": "Sandstone",
+        "state": "Solid",
+        "color": [
+            189,
+            142,
+            92
+        ],
+        "colorVariance": 15,
+        "density": 2.1,
+        "porosity": 0.16,
+        "permeability": 0.08,
+        "cohesion": 0.72,
+        "pressureResistance": 0.72,
+        "description": "Rocha sedimentar porosa que pode armazenar pequenas quantidades de agua."
+    },
+    {
+        "id": 53,
+        "name": "Limestone",
+        "state": "Solid",
+        "color": [
+            165,
+            163,
+            142
+        ],
+        "colorVariance": 13,
+        "density": 2.5,
+        "porosity": 0.07,
+        "permeability": 0.035,
+        "pressureResistance": 0.73,
+        "description": "Rocha carbonatica sedimentar que reage lentamente com acidos."
+    },
+    {
+        "id": 54,
+        "name": "Granite",
+        "state": "Solid",
+        "color": [
+            115,
+            113,
+            126
+        ],
+        "colorVariance": 18,
+        "density": 2.7,
+        "pressureResistance": 0.98,
+        "thermalConductivity": 0.45,
+        "description": "Rocha ignea resistente, frequente em camadas profundas."
+    },
+    {
+        "id": 55,
+        "name": "Shale",
+        "state": "Solid",
+        "color": [
+            79,
+            93,
+            109
+        ],
+        "colorVariance": 11,
+        "density": 2.2,
+        "porosity": 0.10,
+        "permeability": 0.018,
+        "pressureResistance": 0.55,
+        "description": "Rocha sedimentar laminada e relativamente fragil."
+    },
+    {
+        "id": 56,
+        "name": "IronOre",
+        "state": "Solid",
+        "color": [
+            132,
+            83,
+            65
+        ],
+        "colorVariance": 20,
+        "density": 4.4,
+        "pressureResistance": 0.83,
+        "thermalConductivity": 0.45,
+        "transitions": [
+            {
+                "minTemperature": 0.88,
+                "product": "MoltenMetal",
+                "probability": 0.03
+            }
+        ],
+        "description": "Minerio ferroso concentrado em veios e sujeito a fusao extrema."
+    },
+    {
+        "id": 57,
+        "name": "CopperOre",
+        "state": "Solid",
+        "color": [
+            78,
+            149,
+            125
+        ],
+        "colorVariance": 17,
+        "density": 3.7,
+        "pressureResistance": 0.78,
+        "thermalConductivity": 0.66,
+        "transitions": [
+            {
+                "minTemperature": 0.83,
+                "product": "MoltenMetal",
+                "probability": 0.035
+            }
+        ],
+        "description": "Minerio cuprifero raro com alta condutividade termica."
+    },
+    {
+        "id": 58,
+        "name": "Coal",
+        "state": "Solid",
+        "color": [
+            39,
+            43,
+            48
+        ],
+        "colorVariance": 8,
+        "density": 1.4,
+        "flammability": true,
+        "ignitionTemperature": 0.70,
+        "ignitionProbability": 0.035,
+        "pressureResistance": 0.58,
+        "description": "Carbono fossil encontrado em lentes sedimentares e combustivel."
+    },
+    {
+        "id": 59,
+        "name": "Quartz",
+        "state": "Solid",
+        "color": [
+            213,
+            203,
+            212
+        ],
+        "colorVariance": 10,
+        "density": 2.65,
+        "pressureResistance": 0.92,
+        "transitions": [
+            {
+                "minTemperature": 0.94,
+                "product": "MoltenGlass",
+                "probability": 0.025
+            }
+        ],
+        "description": "Cristal de silica resistente ao calor, presente em veios."
+    },
+    {
+        "id": 60,
+        "name": "PineSeed",
+        "state": "Granular",
+        "color": [
+            153,
+            98,
+            46
+        ],
+        "colorVariance": 8,
+        "density": 0.45,
+        "flammability": true,
+        "description": "Semente de conifera capaz de crescer em solos mais frios."
+    },
+    {
+        "id": 61,
+        "name": "MangroveSeed",
+        "state": "Granular",
+        "color": [
+            118,
+            92,
+            62
+        ],
+        "colorVariance": 9,
+        "density": 0.75,
+        "flammability": true,
+        "description": "Propagulo adaptado a margens alagadas de pantanos."
+    },
+    {
+        "id": 62,
+        "name": "PineNeedles",
+        "state": "Solid",
+        "color": [
+            48,
+            103,
+            90
+        ],
+        "colorVariance": 15,
+        "density": 0.18,
+        "flammability": true,
+        "ignitionTemperature": 0.48,
+        "ignitionProbability": 0.07,
+        "description": "Folhas de conifera que resistem melhor ao frio."
+    },
+    {
+        "id": 63,
+        "name": "Mushroom",
+        "state": "Solid",
+        "color": [
+            204,
+            163,
+            132
+        ],
+        "colorVariance": 11,
+        "density": 0.20,
+        "flammability": true,
+        "ignitionTemperature": 0.57,
+        "ignitionProbability": 0.045,
+        "description": "Corpo frutifero que cresce sobre materia organica umida."
+    },
+    {
+        "id": 64,
+        "name": "Mycelium",
+        "state": "Solid",
+        "color": [
+            183,
+            172,
+            151
+        ],
+        "colorVariance": 8,
+        "density": 0.19,
+        "description": "Rede fungica que coloniza restos organicos e contribui para a decomposicao."
+    },
+    {
+        "id": 65,
+        "name": "ShrubSeed",
+        "state": "Granular",
+        "color": [
+            138,
+            126,
+            66
+        ],
+        "colorVariance": 7,
+        "density": 0.6,
+        "flammability": true,
+        "description": "Semente de arbusto tolerante a climas relativamente secos."
+    },
+    {
+        "id": 66,
+        "name": "Shrub",
+        "state": "Solid",
+        "color": [
+            135,
+            149,
+            71
+        ],
+        "colorVariance": 15,
+        "density": 0.3,
+        "flammability": true,
+        "ignitionTemperature": 0.55,
+        "ignitionProbability": 0.055,
+        "description": "Arbusto adaptado a solos de baixa umidade."
+    },
+    {
+        "id": 67,
+        "name": "FracturedRock",
+        "state": "Granular",
+        "color": [
+            113,
+            121,
+            129
+        ],
+        "colorVariance": 17,
+        "density": 2.3,
+        "friction": 0.85,
+        "pressureResistance": 0.25,
+        "description": "Fragmentos que perdem suporte estrutural e podem desmoronar."
+    },
+    {
+        "id": 68,
+        "name": "Peat",
+        "state": "Granular",
+        "color": [
+            57,
+            46,
+            45
+        ],
+        "colorVariance": 9,
+        "density": 0.95,
+        "porosity": 0.77,
+        "permeability": 0.19,
+        "cohesion": 0.32,
+        "flammability": true,
+        "ignitionTemperature": 0.60,
+        "ignitionProbability": 0.03,
+        "description": "Solo organico encharcado, comum em pantanos."
+    },
+    {
+        "id": 69,
+        "name": "Concrete",
+        "state": "Solid",
+        "color": [
+            163,
+            169,
+            172
+        ],
+        "colorVariance": 8,
+        "density": 2.5,
+        "cohesion": 0.82,
+        "pressureResistance": 0.86,
+        "porosity": 0.035,
+        "permeability": 0.008,
+        "thermalConductivity": 0.35,
+        "heatCapacity": 1.9,
+        "description": "Concreto: resiste a compressao mas fratura sob impacto e tensao."
+    },
+    {
+        "id": 70,
+        "name": "ReinforcedConcrete",
+        "state": "Solid",
+        "color": [
+            124,
+            136,
+            147
+        ],
+        "colorVariance": 7,
+        "density": 3.1,
+        "cohesion": 1.0,
+        "pressureResistance": 1.0,
+        "porosity": 0.018,
+        "permeability": 0.003,
+        "thermalConductivity": 0.53,
+        "heatCapacity": 2.0,
+        "description": "Concreto armado: maior resistencia a impactos e deformacao."
+    },
+    {
+        "id": 71,
+        "name": "Roots",
+        "state": "Solid",
+        "color": [
+            121,
+            85,
+            53
+        ],
+        "colorVariance": 9,
+        "density": 0.5,
+        "cohesion": 0.85,
+        "pressureResistance": 0.45,
+        "porosity": 0.21,
+        "permeability": 0.16,
+        "flammability": true,
+        "ignitionTemperature": 0.64,
+        "ignitionProbability": 0.02,
+        "description": "Raizes extraem agua e nutrientes do subsolo e estabilizam o solo."
+    }
+]
