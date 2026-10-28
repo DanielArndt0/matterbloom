@@ -1,15 +1,12 @@
 name: Build Windows
 
 on:
-  push:
-    branches:
-      - main
-    tags:
-      - "v*"
-  workflow_dispatch:
+  release:
+    types:
+      - published
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build-windows:
@@ -20,6 +17,19 @@ jobs:
     steps:
       - name: Obter codigo
         uses: actions/checkout@v4
+
+      - name: Preparar compilador para os testes
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          install: mingw-w64-x86_64-gcc
+
+      - name: Executar testes Windows
+        shell: cmd
+        run: |
+          set "PATH=C:\msys64\mingw64\bin;%PATH%"
+          call scripts\test-windows.cmd
+          if errorlevel 1 exit /b 1
 
       - name: Configurar compilacao
         shell: pwsh
@@ -60,10 +70,11 @@ jobs:
 
           Compress-Archive -Path $destino -DestinationPath "dist/Matterbloom-Windows.zip" -Force
 
-      - name: Disponibilizar ZIP
-        uses: actions/upload-artifact@v4
-        with:
-          name: Matterbloom-Windows
-          path: dist/Matterbloom-Windows.zip
-          if-no-files-found: error
-          retention-days: 30
+      - name: Anexar ZIP a Release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          gh release upload "$env:RELEASE_TAG" "dist/Matterbloom-Windows.zip"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

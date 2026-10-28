@@ -1,0 +1,56 @@
+name: Testes e compilacao
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  testes-linux:
+    name: Testes sem interface
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Obter codigo
+        uses: actions/checkout@v4
+
+      - name: Executar testes e benchmarks
+        shell: bash
+        run: bash scripts/test-headless.sh
+
+  testes-windows:
+    name: Testes e build Windows
+    runs-on: windows-2022
+    timeout-minutes: 60
+
+    steps:
+      - name: Obter codigo
+        uses: actions/checkout@v4
+
+      - name: Preparar compilador para os testes
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          install: mingw-w64-x86_64-gcc
+
+      - name: Executar testes Windows
+        shell: cmd
+        run: |
+          set "PATH=C:\msys64\mingw64\bin;%PATH%"
+          call scripts\test-windows.cmd
+          if errorlevel 1 exit /b 1
+
+      - name: Configurar compilacao Windows
+        shell: pwsh
+        run: |
+          cmake -S . -B build-windows -G "Visual Studio 17 2022" -A x64 -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Compilar Matterbloom
+        shell: pwsh
+        run: |
+          cmake --build build-windows --config Release --parallel 4
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
