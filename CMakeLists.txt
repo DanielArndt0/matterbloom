@@ -18,7 +18,7 @@ include(FetchContent)
 FetchContent_Declare(
     SFML
     GIT_REPOSITORY https://github.com/SFML/SFML.git
-    GIT_TAG        2.5.1
+    GIT_TAG        2.6.2
 )
 FetchContent_MakeAvailable(SFML)
 
@@ -36,7 +36,7 @@ set(IMGUI_SFML_FIND_SFML OFF CACHE BOOL "Don't use find_package for SFML" FORCE)
 FetchContent_Declare(
     ImGui-SFML
     GIT_REPOSITORY https://github.com/SFML/imgui-sfml.git
-    GIT_TAG        v2.5
+    GIT_TAG        v2.6
 )
 FetchContent_MakeAvailable(ImGui-SFML)
 
