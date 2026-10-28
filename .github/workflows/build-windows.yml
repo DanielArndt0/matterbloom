@@ -1,0 +1,69 @@
+name: Build Windows
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-windows:
+    name: Compilar e compactar
+    runs-on: windows-2022
+    timeout-minutes: 60
+
+    steps:
+      - name: Obter codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar compilacao
+        shell: pwsh
+        run: |
+          cmake -S . -B build-windows -G "Visual Studio 17 2022" -A x64 -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Compilar Matterbloom
+        shell: pwsh
+        run: |
+          cmake --build build-windows --config Release --parallel 4
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Gerar arquivo ZIP
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $origem = "build-windows/Release"
+          $destino = "dist/Matterbloom-Windows"
+          $executavel = Join-Path $origem "Matterbloom.exe"
+
+          if (-not (Test-Path $executavel)) {
+            throw "Matterbloom.exe nao foi encontrado apos a compilacao."
+          }
+
+          New-Item -ItemType Directory -Path $destino -Force | Out-Null
+          Copy-Item $executavel $destino
+          Copy-Item "materials.json", "reactions.json", "README.md" $destino
+          Copy-Item "assets" (Join-Path $destino "assets") -Recurse
+
+          Get-ChildItem $origem -Filter "*.dll" -File | Copy-Item -Destination $destino
+
+          $openal = "build-windows/_deps/sfml-src/extlibs/bin/x64/openal32.dll"
+          if (-not (Test-Path $openal)) {
+            throw "A biblioteca OpenAL necessaria para o audio nao foi encontrada."
+          }
+          Copy-Item $openal $destino
+
+          Compress-Archive -Path $destino -DestinationPath "dist/Matterbloom-Windows.zip" -Force
+
+      - name: Disponibilizar ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: Matterbloom-Windows
+          path: dist/Matterbloom-Windows.zip
+          if-no-files-found: error
+          retention-days: 30
