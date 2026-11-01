@@ -1,51 +1,43 @@
 # Matterbloom
 
-**Matterbloom** é um sandbox científico 2D em pixel art para PC. Crie terrenos, construa estruturas, misture materiais e observe a interação entre gravidade, líquidos, calor, química, clima e vegetação. Jogue livremente em um mundo natural ou prepare experimentos em um laboratório.
+**Matterbloom** é um simples sandbox científico 2D em pixel art para PC.
 
-## Instalação no Windows
+## Instalação
 
-O projeto é distribuído como código-fonte. Para gerar o executável:
+Requer Windows e um compilador compatível com **C++17** (MSVC ou MinGW-w64).
 
-1. Instale um compilador C++ com suporte a C++17, como o **Visual Studio Build Tools** (desenvolvimento para desktop com C++) ou o **MinGW-w64**.
-2. Na pasta do projeto, execute **`Build.cmd`**. O script procura CMake e Git e orienta a instalação caso estejam ausentes.
-3. Aguarde a compilação. Na primeira execução, é necessário acesso à internet para obter as bibliotecas do projeto.
-4. Abra **`Matterbloom.exe`** na pasta de compilação indicada pelo script. Mantenha `materials.json`, `reactions.json` e `assets/` junto ao executável; a compilação já os copia automaticamente.
+1. Baixe o código-fonte.
+2. Execute `Build.cmd` na pasta do projeto.
+3. Aguarde a compilação e abra `Matterbloom.exe`.
 
-Como alternativa, compile pelo terminal:
+O script verifica as ferramentas necessárias. A primeira compilação requer conexão com a internet para baixar as dependências.
+
+**Compilação manual:**
 
 ```powershell
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release --parallel 4
 ```
 
-Se o executável não iniciar, confirme que a compilação terminou sem erros e que as dependências de execução do compilador estão instaladas.
-
 ## Como jogar
 
-1. Na tela inicial, escolha **Mundo natural** ou **Laboratório**, o tamanho do mapa e um cenário.
-2. Clique em **Gerar novo mundo** ou **Entrar no mundo**.
-3. Selecione um material na paleta inferior e pinte com o mouse. Teste água, areia, fogo, rochas, plantas e outros materiais.
-4. Abra **Ferramentas** para aquecer, resfriar, fixar estruturas, aplicar forças e lançar materiais.
-5. Use **Mundo** para alterar clima, vento e visualizações; use **Ajustes** para controlar tempo, gravidade e gráficos.
-6. Salve o experimento pela interface ou com `F5`. Os mundos usam arquivos `.mbw`.
+Escolha entre **Mundo natural** e **Laboratório**, configure o cenário e comece a experimentar. Utilize materiais, ferramentas e configurações para modificar o ambiente e observar suas interações.
 
 | Comando | Ação |
-| --- | --- |
-| Clique esquerdo / direito | Pintar / apagar no modo de edição |
-| Roda do mouse / Ctrl + roda | Tamanho do pincel / zoom |
-| Botão central arrastado | Mover a câmera |
-| Alt + clique esquerdo | Selecionar o material sob o cursor |
-| `B`, `H`, `C`, `E`, `I` | Material, aquecer, resfriar, apagar, inspecionar |
-| `Espaço` / `N` | Pausar ou continuar / avançar um passo quando pausado |
-| `Esc` / `Tab` | Menu de pausa / ocultar a interface |
+|---|---|
+| Clique esquerdo / direito | Pintar / apagar |
+| Roda do mouse | Ajustar pincel |
+| Ctrl + roda | Zoom |
+| Botão central | Mover câmera |
+| `B` / `H` / `C` / `E` / `I` | Ferramentas principais |
+| `Espaço` / `N` | Pausar / avançar simulação |
 | `Ctrl+Z` / `Ctrl+Y` | Desfazer / refazer |
-| `Ctrl+S` / `Ctrl+O` | Salvar / abrir arquivo de mundo |
-| `F5` / `F9` | Salvar no slot / carregar mundo salvo |
-
-Para **mirar e lançar**, escolha Lançador, Impulso, Ventilador, Jato, Atração ou Explosão, mantenha o botão direito pressionado, arraste na direção oposta ao efeito e clique com o esquerdo. A roda ajusta a potência durante a mira; `Shift` alterna o disparo contínuo.
+| `Ctrl+S` / `Ctrl+O` | Salvar / abrir mundo |
+| `F5` / `F9` | Salvamento rápido / carregar |
+| `Esc` / `Tab` | Menu / ocultar interface |
 
 ## Documentação
 
-Consulte o [guia completo por módulos](docs/README.md) para aprender sobre todos os sistemas, configurações, experimentos, salvamentos, testes e limitações científicas.
+Consulte a [documentação completa](docs/README.md) para conhecer os sistemas, ferramentas, configurações e limitações da simulação.
 
-Matterbloom é uma simulação discreta orientada à experimentação e à jogabilidade; suas grandezas físicas são aproximações, não resultados de engenharia.
+*Matterbloom utiliza aproximações físicas discretas e não substitui simulações científicas de engenharia.*
